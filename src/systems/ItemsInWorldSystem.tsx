@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { ECSContext, Entity, System } from "@leanscope/ecs-engine";
 import { NameFacet, PointsFacet, PositionFacet, TypeFacet, ValueFacet } from "../app/GameFacets";
 import { Tags } from "../base/Constants";
-import { ItemTypes, Items } from "../components/LumenVeritatis/VideoGame/components/Items";
+import { Items } from "../components/Items";
 
-const ItemsInWorldSystem = () => {
+const ItemsInWorldSystem: React.FC = () => {
   const ecs = useContext(ECSContext);
 
   useEffect(() => {
@@ -12,17 +12,17 @@ const ItemsInWorldSystem = () => {
 
     const itemEntity = new Entity();
     ecs.engine.addEntity(itemEntity);
-    itemEntity.addComponent(new NameFacet({ nameValue: Items.APPLE }));
+    itemEntity.addComponent(new NameFacet({ name: Items.APPLE }));
     itemEntity.addComponent(new ValueFacet({ value: 1 }));
-    itemEntity.addComponent(new PositionFacet({  positionValue: [2, 2] }));
-    itemEntity.addComponent(new TypeFacet({ type:"sd" }));
-    itemEntity.addComponent(new PointsFacet({  healingPoints: 1 }));
+    itemEntity.addComponent(new PositionFacet({ positionValue: [2, 2] }));
+    itemEntity.addComponent(new TypeFacet({ typeName: "sd" }));
+    itemEntity.addComponent(new PointsFacet({ pointsValue: 1 }));
     itemEntity.addTag(Tags.ITEM_IN_WORLD);
 
     return () => {
       ecs.engine.removeEntity(itemEntity);
     };
-  }, []);
+  }, [ecs]);
 
   return <></>;
 };

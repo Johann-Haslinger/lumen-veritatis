@@ -8,9 +8,9 @@ import {
   ValueFacet,
   VisibilityFacet,
 } from "../app/GameFacets";
-import { BASE_ASSET_URL, Tags } from "../base/Constants";
+import { Tags } from "../base/Constants";
 import { ECSContext, Entity, System } from "@leanscope/ecs-engine";
-import { Items } from "../components/LumenVeritatis/VideoGame/components/Items";
+import { Items } from "../components/Items";
 
 const InitSystem = () => {
   const ecs = useContext(ECSContext);

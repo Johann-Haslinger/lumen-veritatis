@@ -1,12 +1,12 @@
 import React from "react";
-import Game from "./VideoGame/pages/Game";
 import {
   useEntities,
   useEntity,
   useEntityComponents,
 } from "@leanscope/ecs-engine";
-import { GameStateFacet, GameStates } from "../../app/GameFacets";
-import { Facet } from "../../base/Facet";
+import { GameStateFacet } from "../app/GameFacets";
+import Game from "./Game";
+
 
 const ScreenHandler = () => {
   // const [gameStateEntity] = useEntity((e) => e.has(GameStateFacet));

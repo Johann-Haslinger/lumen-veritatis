@@ -1,5 +1,13 @@
+import ScreenHandler from './pages/ScreenHandler';
+import InitSystem from './systems/InitSystem';
+
 function App() {
-  return <>hallo</>;
+  return (
+    <>
+      <InitSystem />
+      <ScreenHandler />
+    </>
+  );
 }
 
 export default App;

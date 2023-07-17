@@ -1,7 +1,7 @@
 import { Facet } from "../base/Facet";
 
 export interface PointsProps {
-  pointsValue: number
+  pointsValue: number;
 }
 
 export class PointsFacet extends Facet<PointsProps> {
@@ -11,7 +11,7 @@ export class PointsFacet extends Facet<PointsProps> {
 }
 
 export interface TypeProps {
-  typeName: string
+  typeName: string;
 }
 
 export class TypeFacet extends Facet<TypeProps> {
@@ -21,7 +21,7 @@ export class TypeFacet extends Facet<TypeProps> {
 }
 
 export interface VisibilityProps {
-  isVisible: boolean
+  isVisible: boolean;
 }
 
 export class VisibilityFacet extends Facet<VisibilityProps> {
@@ -31,7 +31,7 @@ export class VisibilityFacet extends Facet<VisibilityProps> {
 }
 
 export interface ValueProps {
-  value: number
+  value: number;
 }
 
 export class ValueFacet extends Facet<ValueProps> {
@@ -40,14 +40,8 @@ export class ValueFacet extends Facet<ValueProps> {
   }
 }
 
-// export class DescriptionFacet extends Facet {
-//   constructor(props) {
-//     super(props);
-//   }
-// }
-
 export interface HealthProps {
-  healthValue: Array<number>
+  healthValue: Array<number>;
 }
 
 export class HealthFacet extends Facet<HealthProps> {
@@ -57,9 +51,8 @@ export class HealthFacet extends Facet<HealthProps> {
 }
 
 export interface PositionProps {
-  positionValue: Array<number>
+  positionValue: Array<number>;
 }
-
 
 export class PositionFacet extends Facet<PositionProps> {
   constructor(props: PositionProps) {
@@ -68,26 +61,14 @@ export class PositionFacet extends Facet<PositionProps> {
 }
 
 export interface NameProps {
-  name: string
+  name: string;
 }
 
 export class NameFacet extends Facet<NameProps> {
-  constructor(props = { name: "untiteld" }) {
+  constructor(props: NameProps = { name: "untitled" }) {
     super(props);
   }
 }
-
-// export class CoinsFacet extends Facet {
-//   constructor(props) {
-//     super(props);
-//   }
-// }
-
-// export class HitableFacet extends Facet {
-//   constructor(props) {
-//     super(props);
-//   }
-// }
 
 export const GameStates = {
   WELCOME: 0,
@@ -95,8 +76,12 @@ export const GameStates = {
   GAME_OVER: 2,
 };
 
-export class GameStateFacet extends Facet {
-  constructor(props) {
+export interface GameStateProps {
+  gameState: number;
+}
+
+export class GameStateFacet extends Facet<GameStateProps> {
+  constructor(props: GameStateProps) {
     super(props);
   }
 }
