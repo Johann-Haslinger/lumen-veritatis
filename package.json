@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@leanscope/ecs-engine": "^0.1.65",
+    "@leanscope/ecs-models": "^0.1.91",
     "@react-three/drei": "^9.78.2",
     "framer-motion": "^10.12.22",
     "react": "^18.2.0",
