@@ -7,8 +7,6 @@ import {
   useEntityComponents,
   useEntityProps,
 } from "@leanscope/ecs-engine";
-import { Tags } from "../../../../base/Constants";
-import { PositionFacet } from "../../../../app/GameFacets";
 import { EntityProps } from "@leanscope/ecs-engine/react-api/classes/EntityProps";
 
 const Player = () => {
