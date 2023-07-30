@@ -1,22 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import React, { useEffect, useRef, useState } from 'react';
+import { useFrame } from '@react-three/fiber';
 import {
   Entity,
   useEntities,
   useEntity,
   useEntityComponents,
   useEntityProps,
-} from "@leanscope/ecs-engine";
-import { EntityProps } from "@leanscope/ecs-engine/react-api/classes/EntityProps";
+} from '@leanscope/ecs-engine';
+import { EntityProps } from '@leanscope/ecs-engine/react-api/classes/EntityProps';
+import { Tags } from '../../base/Constants';
+import { PositionFacet } from '../../app/GameFacets';
 
 const Player = () => {
-  // const [playerEntites] = useEntities((e) => e.hasTag(Tags.PLAYER));
-  // const playerEntity = playerEntites[0];
-  // console.log(playerEntity)
-  // const [playerPositionFacet] = useEntityComponents(
-  //   playerEntity,
-  //   PositionFacet
-  // );
+  const [playerEntites] = useEntities((e) => e.hasTag(Tags.PLAYER));
+  let playerEntity = playerEntites[0];
+
+ 
+
+  useEffect(() => {
+    playerEntity = playerEntites[0];
+
+    
+  }, [playerEntites]);
+
+
   const [playerPosition, setPlayerPosition] = useState([2, 2]);
 
   // // const [components] = useEntityComponents(playerEntity);
@@ -39,7 +46,7 @@ const Player = () => {
     let dx = 0;
     let dy = 0;
 
-    if (key === "ArrowUp") {
+    if (key === 'ArrowUp') {
       isUpPressed = true;
     } else {
       isUpPressed = false;
@@ -49,7 +56,7 @@ const Player = () => {
       dy += speed;
     }
 
-    if (key === "ArrowDown") {
+    if (key === 'ArrowDown') {
       dy += speed;
     }
 
@@ -108,12 +115,7 @@ const Player = () => {
 
   return (
     <>
-      {playerPosition && (
-        <mesh position={[playerPosition[0], playerPosition[1], 0]}>
-          <boxGeometry args={[0.5, 0.5, 0.1]} />
-          <meshBasicMaterial color="rgb(91,80,74)" />
-        </mesh>
-      )}
+     
     </>
   );
 };

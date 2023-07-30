@@ -70,7 +70,7 @@ const InitSystem = () => {
     ecs.engine.addEntity(gameStateEntity);
     gameStateEntity.addComponent(new GameStateFacet({ gameState: GameStates.PLAYING }));
 
-    console.log("Game state entity added", ecs.engine.entities);
+    // console.log("Game state entity added", ecs.engine.entities);
 
     return () => {
       ecs.engine.removeEntity(gameStateEntity);
